@@ -5,15 +5,56 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="./assets/eagle.png">
+    <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Fredoka+One&family=Oi&family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css" integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu" crossorigin="anonymous">
     <link rel="stylesheet" href="./css/style.css">
     
-    <title>Zoo Crash</title>
+    <title>Zoo Crush</title>
 </head>
 <body>
+
+
+    <main class="contenedor-general">
+
+         <!-- ENCABEZADO -->
+
+        <header class="titulares">
+            <h1 class="zoo">ZOO</h1>
+            <span class="crash">Crush!</span>
+        </header>
+
+
+        <!-- PANEL DE PUNTAJE Y COMBOS -->
+
+        <section class="panel" id="panel">
+            <article class="panel-puntaje">
+                <p class="combo-texto">Combo x 
+                    <span id="combo-numero">1</span>
+                </p>
+                <p class="puntos-texto">Puntos: 
+                    <span id="puntos-numero">0</span>
+                </p>
+            </article>
+            <article class="panel-botones">
+                <button class="info-button"><i class="fas fa-info-circle" aria-hidden="true"></i></button>
+                <button id="undo-button"><i class="fas fa-undo-alt" aria-hidden="true"></i></button>
+            </article>
+        </section>
+
+        <!-- GRILLA DE JUEGO -->
+
+        <section class="grilla" id="grilla"></section>
+
+
+        <!-- TIEMPO -->
+
+        <section class="tiempo-contenedor">
+            <i class="fas fa-stopwatch" aria-hidden="true"></i>
+            <p class="tiempo">0:00</p>
+        </section>
+
+    </main>
     
-
-
-
     <script src="./main.js"></script>
 </body>
 </html>
