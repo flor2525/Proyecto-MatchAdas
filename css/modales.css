@@ -1,0 +1,23 @@
+
+.swal-title{
+    color: rgb(6, 136, 91);
+    font-family: 'Pacifico', cursive;
+}
+
+.swal-text{
+    color: rgb(0, 0, 13);
+    font-family: Verdana, Tahoma, sans-serif;
+    text-align: center;
+}
+
+.swal-button{
+    background-color: rgb(6, 136, 91);
+    font-family: Verdana, Tahoma, sans-serif;
+    /* font-size: 1rem; */
+}
+
+
+.swal-button:not([disabled]):hover {
+    background-color: rgba(204, 97, 89, 0.9);
+    color: white;
+}
