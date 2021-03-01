@@ -107,9 +107,17 @@ body{
     border-radius: 10px;
     border: 4px solid rgb(6, 136, 91);
     display: flex;
+    align-items: center;
+    justify-content: center;
     flex-wrap: wrap;
-    padding: 2%;
 }
+
+
+/* .grilla div{
+    font-size: 50px;
+    margin: 0;
+    padding: 0;
+} */
 
 /* TEMPORIZADOR */
 
@@ -133,6 +141,27 @@ body{
     margin-right: 5px;
     font-size: 25px;
 }
+
+
+/* ESILOS EMOJIS DE ACUERDO AL NIVEL */
+
+.emoji-dificil{
+    width: 65px;
+    height: 65px;
+    font-size: 50px;
+}  
+
+.emoji-normal{
+    width: 55px;
+    height: 55px;
+    font-size: 50px;
+
+}
+.emoji-facil{
+    width: 50px;
+    height: 50px;
+    font-size: 44px;
+} 
 
 
 /* AJUSTES RESPONSIVE */
@@ -166,9 +195,27 @@ body{
     }
 
 
+    .emoji-dificil{
+        width: 45px;
+        height: 45px;
+        font-size: 40px;
+    }  
+    
+    .emoji-normal{
+        width: 40px;
+        height: 40px;
+        font-size: 35px;
+    
+    }
+    .emoji-facil{
+        width: 35px;
+        height: 35px;
+        font-size: 30px;
+    } 
+
 }
 
-@media(max-width:330px){
+@media(max-width:350px){
     .contenedor-general{
         width: 250px;
     }
@@ -182,7 +229,7 @@ body{
     }
 
     .panel-puntaje{
-        font-size: 15px;
+        font-size: 12px;
     }
 
     .panel-botones button{
@@ -194,5 +241,24 @@ body{
     .grilla{
         height: 250px;
     }
+
+
+    .emoji-dificil{
+        width: 33px;
+        height: 33px;
+        font-size: 23px;
+    }  
+    
+    .emoji-normal{
+        width: 30px;
+        height: 30px;
+        font-size: 25px;
+    
+    }
+    .emoji-facil{
+        width: 25px;
+        height: 25px;
+        font-size: 20px;
+    } 
 
 }
