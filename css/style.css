@@ -132,14 +132,14 @@ body{
     border: 2px solid rgb(17, 95, 6);
     color: #FAFAFA;
     font-weight: bold;
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .tiempo-contenedor i{
     color: #FAFAFA;
     margin-right: 5px;
-    font-size: 25px;
+    font-size: 20px;
 }
 
 

@@ -1,19 +1,22 @@
-// ******************** GRILLA ********************
-
-// + Arr para sacar emojis aleatorios
-
- const items = ["🦁", "🐻", "🦊", "🐼", "🐨"];
-
-// + Niveles de juego
-
- const nivelFacil = 9;
- const nivelNormal = 8;
- const nivelDificil = 7;
-
-
-//  + Tablero
+// ******************** ELEMENTOS DE HTML ********************
 
 const grilla = document.getElementById('grilla');
+const temporizador = document.getElementById('temporizador')
+
+
+// ******************** VARIABLES GLOBALES ********************
+
+const items = ["🦁", "🐻", "🦊", "🐼", "🐨"];
+
+const nivelFacil = 9;
+const nivelNormal = 8;
+const nivelDificil = 7;
+
+let tiempo ;
+let empezarTiempo ;
+
+// ******************** FUNCIONES ********************
+
 
 //  + Función para generar emojis random
 
@@ -39,6 +42,7 @@ const generaRandom = (min, max) => {
 // + Función para generar tablero
 
 const generarTablero = (nivel) => {
+        tiempo = 30
         grilla.innerHTML = '';
         nuevoArr = [];
         for (let i = 0; i < nivel; i++){
@@ -54,10 +58,33 @@ const generarTablero = (nivel) => {
             ajustarTamano(nivel, nuevoDiv);
                 
         }
+        empezarTiempo = setInterval(reloj, 1000);
           
     }
     
-    generarTablero(nivelDificil)
+    
+    // + Función de temporizador
 
-    
-    
+    const reloj = () => {
+        if (tiempo > 0) {
+        tiempo--
+        let  segundos  =  tiempo % 60 ;
+        let  minutos  =  (( tiempo  -  segundos ) / 60 ) % 60 ; 
+        let  txtSegundos  =  segundos  <  10 ? '0'  +  segundos : segundos ;
+        let  txtMinutos  =  minutos  <  10 ? '0'  +  minutos : minutos ;
+        temporizador . innerHTML  =  `${txtMinutos}:${txtSegundos}`;
+             
+        } else {
+            console.log('game over')
+        }
+    }
+
+    // + Función para frenar temporizador
+
+    const FrenarTiempo = () => {
+        clearInterval(empezarTiempo)
+    }
+       
+
+
+
