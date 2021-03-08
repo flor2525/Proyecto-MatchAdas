@@ -2,6 +2,8 @@
 
 const grilla = document.getElementById('grilla');
 const temporizador = document.getElementById('temporizador')
+const botonInfo = document.getElementById('boton-info')
+const botonReiniciar = document.getElementById('boton-reiniciar')
 
 
 // ******************** VARIABLES GLOBALES ********************
@@ -14,6 +16,7 @@ const nivelDificil = 7;
 
 let tiempo ;
 let empezarTiempo ;
+
 
 // ******************** FUNCIONES ********************
 
@@ -61,8 +64,7 @@ const generarTablero = (nivel) => {
         empezarTiempo = setInterval(reloj, 1000);
           
     }
-    
-    
+
     // + Función de temporizador
 
     const reloj = () => {
@@ -75,7 +77,7 @@ const generarTablero = (nivel) => {
         temporizador . innerHTML  =  `${txtMinutos}:${txtSegundos}`;
              
         } else {
-            console.log('game over')
+            // ModalJuegoTerminado()
         }
     }
 
@@ -84,6 +86,10 @@ const generarTablero = (nivel) => {
     const FrenarTiempo = () => {
         clearInterval(empezarTiempo)
     }
+
+
+
+    
        
 
 
