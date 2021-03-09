@@ -10,12 +10,11 @@ const botonReiniciar = document.getElementById('boton-reiniciar')
 
 const items = ["🦁", "🐻", "🦊", "🐼", "🐨"];
 
-const nivelFacil = 9;
-const nivelNormal = 8;
-const nivelDificil = 7;
-
+let nivel ;
 let tiempo ;
+let pausa ;
 let empezarTiempo ;
+
 
 
 // ******************** FUNCIONES ********************
@@ -31,9 +30,9 @@ const generaRandom = (min, max) => {
 // + Función para adaptar tamaño de la grilla
 
  const ajustarTamano = (nivel, div) => {
-    if (nivel === nivelFacil) {
+    if (nivel === 9) {
             div.classList.add('emoji-facil')
-        } else if (nivel === nivelNormal) {
+        } else if (nivel === 8) {
             div.classList.add('emoji-normal')
         } else {
             div.classList.add('emoji-dificil')
@@ -65,6 +64,13 @@ const generarTablero = (nivel) => {
           
     }
 
+
+    // + Función para limpiar el tablero
+
+    const limpiarTablero = () => {
+        grilla.innerHTML = ''
+    }
+
     // + Función de temporizador
 
     const reloj = () => {
@@ -73,11 +79,13 @@ const generarTablero = (nivel) => {
         let  segundos  =  tiempo % 60 ;
         let  minutos  =  (( tiempo  -  segundos ) / 60 ) % 60 ; 
         let  txtSegundos  =  segundos  <  10 ? '0'  +  segundos : segundos ;
+        pausa = txtSegundos
         let  txtMinutos  =  minutos  <  10 ? '0'  +  minutos : minutos ;
         temporizador . innerHTML  =  `${txtMinutos}:${txtSegundos}`;
              
         } else {
-            // ModalJuegoTerminado()
+
+            ModalJuegoTerminado()
         }
     }
 
@@ -91,6 +99,8 @@ const generarTablero = (nivel) => {
 
     
        
-
+    botonReiniciar.addEventListener('click', () => {
+        modalReiniciar()
+      })
 
 
