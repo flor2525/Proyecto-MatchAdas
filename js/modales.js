@@ -29,15 +29,18 @@
                 switch (value) {
                
                   case "facil":
-                    generarTablero(nivelFacil)
+                    nivel = 9
+                    generarTablero(nivel)
                     break;
                
                   case "normal":
-                    generarTablero(nivelNormal)
+                    nivel = 8
+                    generarTablero(nivel)
                     break;
                 
                   case "dificil":
-                    generarTablero(nivelDificil)
+                    nivel = 7
+                    generarTablero(nivel)
                      break;
                
                 }
@@ -73,34 +76,35 @@
 
     // + Modal juego terminado - funciona pero no puedo hacer que mantenga el nivel
 
-    // const ModalJuegoTerminado = () =>{
-    //     swal({
-    //         title: '¡Juego Terminado!',
-    //         text: `Puntaje Final: 0`,
-    //         buttons: {
-    //             nuevoJuego: {
-    //                 text: 'Nuevo Juego',
-    //                 value: 'nuevoJuego'
-    //             },
-    //             reiniciar:{
-    //                 text:'Reiniciar',
-    //                 value: 'reiniciar'
-    //             }
-    //         },
-    //         closeOnClickOutside: false,
-    //         closeOnEsc: false
-    //     })
-    //     .then((value) => {
-    //         switch (value) {
-    //             case 'nuevoJuego':
-    //                 seleccionNivel();
-    //                 break;
-    //             case 'reiniciar':
-    //                 break;
-    //             }
-    //     });
-    //     FrenarTiempo();
-    // };
+    const ModalJuegoTerminado = () => {
+        swal({
+            title: '¡Juego Terminado!',
+            text: `Puntaje Final: 0`,
+            buttons: {
+                nuevoJuego: {
+                    text: 'Nuevo Juego',
+                    value: 'nuevoJuego'
+                },
+                reiniciar:{
+                    text:'Reiniciar',
+                    value: 'reiniciar'
+                }
+            },
+            closeOnClickOutside: false,
+            closeOnEsc: false
+        })
+        .then((value) => {
+            switch (value) {
+                case 'nuevoJuego':
+                    seleccionNivel();
+                    break;
+                case 'reiniciar':
+                    generarTablero(nivel)
+                    break;
+                }
+        });
+        FrenarTiempo();
+    };
 
 
      // + Modal reiniciar juego - 
